@@ -22,7 +22,7 @@ export default function AvgOrderValueChart({ data }: Props) {
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
           <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: "#9ca3af" }} />
           <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: "#9ca3af" }} />
-          <Tooltip formatter={(value: number) => [formatCurrency(value), "Avg Value"]} />
+          <Tooltip formatter={(value) => [formatCurrency(Number(value)), "Avg Value"]} />
           <Area type="monotone" dataKey="value" stroke="#8b5cf6" fill="url(#aovGrad)" strokeWidth={2} dot={{ fill: "#8b5cf6", stroke: "#fff", strokeWidth: 2, r: 4 }} />
         </AreaChart>
       </ResponsiveContainer>

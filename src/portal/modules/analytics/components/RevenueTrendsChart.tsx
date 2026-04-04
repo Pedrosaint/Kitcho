@@ -16,7 +16,7 @@ export default function RevenueTrendsChart({ data }: Props) {
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
           <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: "#9ca3af" }} />
           <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: "#9ca3af" }} />
-          <Tooltip formatter={(value: number) => [formatCurrency(value), "Revenue"]} />
+          <Tooltip formatter={(value) => [formatCurrency(Number(value)), "Revenue"]} />
           <Line type="monotone" dataKey="revenue" stroke="#f97316" strokeWidth={2} dot={{ fill: "#f97316", stroke: "#fff", strokeWidth: 2, r: 5 }} />
         </LineChart>
       </ResponsiveContainer>

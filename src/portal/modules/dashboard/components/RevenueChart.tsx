@@ -16,7 +16,7 @@ export default function RevenueChart({ data }: Props) {
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
           <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: "#9ca3af" }} />
           <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: "#9ca3af" }} />
-          <Tooltip formatter={(value: number) => [formatCurrency(value), "Revenue"]} />
+          <Tooltip formatter={(value) => [formatCurrency(Number(value)), "Revenue"]} />
           <Bar dataKey="revenue" fill="#f97316" radius={[6, 6, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>

@@ -5,7 +5,7 @@ interface Props {
   data: DeliveryPerformance[];
 }
 
-const renderLabel = ({ name, value }: { name: string; value: number }) => `${name}: ${value}%`;
+const renderLabel = (props: { name?: string; value?: number }) => `${props.name ?? ""}: ${props.value ?? 0}%`;
 
 export default function DeliveryPerformanceChart({ data }: Props) {
   return (
@@ -27,7 +27,7 @@ export default function DeliveryPerformanceChart({ data }: Props) {
               <Cell key={entry.name} fill={entry.color} />
             ))}
           </Pie>
-          <Tooltip formatter={(value: number) => [`${value}%`]} />
+          <Tooltip formatter={(value) => [`${value}%`]} />
           <Legend
             verticalAlign="bottom"
             iconType="circle"
