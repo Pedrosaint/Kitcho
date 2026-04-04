@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Global interactive states */
+button {
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+/* Smooth table row hover */
+tbody tr {
+  transition: background-color 0.15s ease;
+}
+tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Card containers get subtle hover lift */
+.rounded-xl {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Smooth sidebar nav transitions */
+nav a {
+  transition: all 0.15s ease;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Smooth page transitions */
+main {
+  scroll-behavior: smooth;
+}
+
+/* Skeleton shimmer animation */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
