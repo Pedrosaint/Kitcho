@@ -60,9 +60,9 @@ export default function Sidebar({ onClose }: Props) {
             end={item.path === "/"}
             onClick={onClose}
             className={({ isActive }) =>
-              `flex items-center gap-3 rounded-lg py-2.5 text-sm font-medium transition-colors ${
+              `flex items-center gap-3 py-2.5 text-sm font-medium transition-colors ${
                 isActive
-                  ? "border-l-4 border-orange-500 bg-orange-50/60 text-orange-600 pl-2.5 pr-3"
+                  ? "border-l-5 border-orange-500 bg-orange-50/60 text-orange-600 pl-2.5 pr-3"
                   : "text-gray-600 hover:bg-gray-50 hover:text-gray-900 px-3"
               }`
             }
