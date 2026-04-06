@@ -15,17 +15,17 @@ import {
 } from "lucide-react";
 
 const navItems = [
-  { label: "Dashboard", icon: LayoutDashboard, path: "/" },
-  { label: "Orders", icon: ShoppingCart, path: "/orders" },
-  { label: "Customers", icon: Users, path: "/customers" },
-  { label: "Chefs (Vendors)", icon: ChefHat, path: "/chefs" },
-  { label: "Dispatch Riders", icon: Bike, path: "/dispatch-riders" },
-  { label: "Transactions", icon: Receipt, path: "/transactions" },
-  { label: "Earnings", icon: Wallet, path: "/earnings" },
-  { label: "Analytics", icon: BarChart3, path: "/analytics" },
-  { label: "Promotions", icon: Tag, path: "/promotions" },
-  { label: "Support", icon: Headphones, path: "/support" },
-  { label: "Settings", icon: Settings, path: "/settings" },
+  { label: "Dashboard", icon: LayoutDashboard, path: "/admin" },
+  { label: "Orders", icon: ShoppingCart, path: "/admin/orders" },
+  { label: "Customers", icon: Users, path: "/admin/customers" },
+  { label: "Chefs (Vendors)", icon: ChefHat, path: "/admin/chefs" },
+  { label: "Dispatch Riders", icon: Bike, path: "/admin/dispatch-riders" },
+  { label: "Transactions", icon: Receipt, path: "/admin/transactions" },
+  { label: "Earnings", icon: Wallet, path: "/admin/earnings" },
+  { label: "Analytics", icon: BarChart3, path: "/admin/analytics" },
+  { label: "Promotions", icon: Tag, path: "/admin/promotions" },
+  { label: "Support", icon: Headphones, path: "/admin/support" },
+  { label: "Settings", icon: Settings, path: "/admin/settings" },
 ];
 
 interface Props {
@@ -57,7 +57,7 @@ export default function Sidebar({ onClose }: Props) {
           <NavLink
             key={item.path}
             to={item.path}
-            end={item.path === "/"}
+            end={item.path === "/admin"}
             onClick={onClose}
             className={({ isActive }) =>
               `flex items-center gap-3 py-2.5 text-sm font-medium transition-colors ${

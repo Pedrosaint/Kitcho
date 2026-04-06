@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import AdminLayout from "../shared/layouts/AdminLayout";
+import LandingLayout from "../shared/layouts/LandingLayout";
 import DashboardPage from "../portal/modules/dashboard/pages/dashboard.page";
 import OrderPage from "../portal/modules/orders/pages/order.page";
 import CustomerPage from "../portal/modules/customers/pages/customer.page";
@@ -11,10 +12,19 @@ import AnalyticsPage from "../portal/modules/analytics/pages/analytics.page";
 import PromotionPage from "../portal/modules/promotions/pages/promotion.page";
 import SupportPage from "../portal/modules/support/pages/support.page";
 import SettingsPage from "../portal/modules/settings/pages/settings.page";
+import LandingPage from "../Landing/pages/landing.page";
+import GeneralLayout from "../shared/layouts/GeneralLayout";
+import FaqPage from "../Landing/pages/faq.page";
 
 export const router = createBrowserRouter([
   {
     path: "/",
+    element: <LandingLayout />,
+    children: [{ index: true, element: <LandingPage /> }],
+  },
+  { path: "/faqs", element: <GeneralLayout />, children: [{ index: true, element: <FaqPage /> }] },
+  {
+    path: "/admin",
     element: <AdminLayout />,
     children: [
       { index: true, element: <DashboardPage /> },

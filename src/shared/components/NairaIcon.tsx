@@ -1,24 +1,31 @@
-interface Props {
-  size?: number;
-  className?: string;
-}
+import { forwardRef } from "react";
+import type { LucideProps } from "lucide-react";
 
-export default function NairaIcon({ size = 22, className = "" }: Props) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M6 20V4l12 16V4" />
-      <line x1="4" y1="10" x2="20" y2="10" />
-      <line x1="4" y1="14" x2="20" y2="14" />
-    </svg>
-  );
-}
+const NairaIcon = forwardRef<SVGSVGElement, Omit<LucideProps, "ref">>(
+  ({ size = 22, className = "", ...rest }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+        {...rest}
+      >
+        <path d="M8 5v14" />
+        <path d="M16 5v14" />
+        <path d="M6 10h12" />
+        <path d="M6 14h12" />
+      </svg>
+    );
+  },
+);
+
+NairaIcon.displayName = "NairaIcon";
+
+export default NairaIcon;

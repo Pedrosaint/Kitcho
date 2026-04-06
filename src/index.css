@@ -51,3 +51,16 @@ main {
     transform: translateX(100%);
   }
 }
+
+
+.clip-slant {
+  clip-path: polygon(0 0, 87% 0, 100% 100%, 0% 100%);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 42px !important;
+}
+
+.clip-slant-flipped {
+  clip-path: polygon(0% 0, 100% 0, 100% 100%, 8.5% 100%);
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 42px !important;
+}
