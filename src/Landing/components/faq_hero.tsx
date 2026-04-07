@@ -6,7 +6,7 @@ export default function FAQHero() {
   return (
     <section className="bg-white relative overflow-hidden">
       {/* ================= DESKTOP VERSION ================= */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-40">
+      <div className="lg:grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-40 hidden">
         {/* Left — Text + Accordion */}
         <div className="mx-auto container px-55">
           <h2 className="text-3xl font-semibold text-gray-900 mb-3">
@@ -22,7 +22,7 @@ export default function FAQHero() {
           alt=""
           className="absolute -bottom-1 xl:left-55 object-contain"
         />
-        {/* Right — 3D illustration */}
+
         {/* Right — 3D illustration */}
         <div className="relative">
           <img
