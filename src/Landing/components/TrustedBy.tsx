@@ -16,18 +16,26 @@ interface Props {
 
 export default function TrustedBy({ stats }: Props) {
   return (
-    <section className="-mt-2">
+    <section className="lg:-mt-2 m-5 lg:m-0">
       <div className="mx-auto container px-5 py-4 bg-white rounded-tr-2xl rounded-b-2xl">
         {/* Heading + stats */}
         <div className="grid grid-cols-1 items-center gap-4 lg:grid-cols-2">
           {/* Left */}
           <div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl font-bold text-gray-900"
+            >
+              Trusted by Thousands
+            </motion.h2>
             <p className="text-lg text-gray-500">
               Join our growing community of happy customers
             </p>
 
             {/* Avatar stack */}
-            <div className="mt-4 flex items-center gap-2 bg-[#FEE0D6] rounded-full px-4 py-1 w-max">
+            <div className="mt-4 flex items-center gap-2 bg-[#FEE0D6] rounded-full px-3 py-1 w-max">
               <div className="flex -space-x-2">
                 {[
                   "bg-orange-400",
@@ -53,7 +61,7 @@ export default function TrustedBy({ stats }: Props) {
           </div>
 
           {/* Right — stat cards */}
-          <div className="grid grid-cols-2 gap-1 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-1 lg:grid-cols-4">
             {stats.map((stat, i) => {
               const Icon = statIcons[stat.icon] || Users;
               return (
@@ -63,7 +71,7 @@ export default function TrustedBy({ stats }: Props) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl border border-orange-100 p-4 text-center w-full max-w-30"
+                  className="rounded-xl border border-orange-100 p-4 text-center w-full lg:max-w-30"
                   style={{
                     background: "linear-gradient(to top, #942C07, #FF5A1F)",
                   }}

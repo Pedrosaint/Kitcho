@@ -15,7 +15,6 @@ export default function FooterSection() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
-
       {/* Content */}
       <div className="relative z-10 mx-auto container px-5 py-20 flex flex-col items-center text-center text-white">
         <h2 className="text-3xl sm:text-4xl font-bold mb-3">
@@ -37,7 +36,7 @@ export default function FooterSection() {
             </div>
           </button>
 
-          <button className="inline-flex items-center gap-3 rounded border border-white bg-white/10 backdrop-blur-sm pl-4 pr-7 py-3 text-white hover:bg-white/20 transition-colors shadow-lg">
+          <button className="inline-flex items-center gap-3 rounded border border-white bg-white/10 backdrop-blur-sm pl-8 md:pl-4 pr-7 py-3 text-white hover:bg-white/20 transition-colors shadow-lg">
             <img src={AppleIcon} alt="" className="w-8 h-8 invert" />
             <div className="text-left">
               <p className="text-[10px] font-medium tracking-wide leading-none opacity-60">

@@ -82,45 +82,100 @@ const faqCategories = [
 export default function FAQSection() {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
-  const toggle = (key: string) =>
+  const toggle = (key: string) => {
     setOpenItem(openItem === key ? null : key);
+  };
 
   return (
-    <section className="bg-white py-10">
-      <div className="mx-auto container">
-        {faqCategories.map((cat, ci) => (
-          <div key={ci} className="flex gap-8 mb-12">
-            {/* Category label */}
-            <div className="w-44 shrink-0 pt-2">
-              <p className="text-gray-500 text-sm font-medium">{cat.category}</p>
+    <section className="bg-white">
+      {/* ================= DESKTOP ================= */}
+      <div className="hidden lg:block py-10">
+        <div className="mx-auto container">
+          {faqCategories.map((cat, ci) => (
+            <div key={ci} className="flex gap-8 mb-12">
+              {/* Category */}
+              <div className="w-44 shrink-0 pt-2">
+                <p className="text-gray-500 text-sm font-medium">
+                  {cat.category}
+                </p>
+              </div>
+
+              {/* Questions */}
+              <div className="flex-1 flex flex-col gap-3">
+                {cat.questions.map((faq, qi) => {
+                  const key = `${ci}-${qi}`;
+                  const isOpen = openItem === key;
+
+                  return (
+                    <div
+                      key={qi}
+                      className="border border-gray-200 overflow-hidden transition-all"
+                      style={{
+                        borderRadius: isOpen ? "1rem" : "9999px",
+                      }}
+                    >
+                      <button
+                        onClick={() => toggle(key)}
+                        className="w-full flex items-center justify-between px-5 py-3 text-left"
+                      >
+                        <span className="text-gray-700 text-sm">
+                          {faq.question}
+                        </span>
+
+                        <div className="w-7 h-7 rounded-full bg-gray-300 flex items-center justify-center">
+                          {isOpen ? <Minus size={14} /> : <Plus size={14} />}
+                        </div>
+                      </button>
+
+                      {isOpen && (
+                        <div className="px-5 pb-4 text-gray-500 text-sm">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ================= MOBILE ================= */}
+      <div className="lg:hidden px-5 py-10">
+        {faqCategories.map((cat, ci) => (
+          <div key={ci} className="mb-8">
+            {/* Category Title */}
+            <h3 className="text-base font-semibold text-gray-900 mb-3">
+              {cat.category}
+            </h3>
 
             {/* Questions */}
-            <div className="flex-1 flex flex-col gap-3">
+            <div className="space-y-3">
               {cat.questions.map((faq, qi) => {
                 const key = `${ci}-${qi}`;
                 const isOpen = openItem === key;
+
                 return (
                   <div
                     key={qi}
-                    className="border border-gray-200 rounded-full overflow-hidden"
-                    style={{ borderRadius: isOpen ? "1rem" : "9999px" }}
+                    className="border border-gray-200 rounded-xl overflow-hidden"
                   >
                     <button
                       onClick={() => toggle(key)}
-                      className="w-full flex items-center justify-between px-5 py-3 text-left"
+                      className="w-full flex items-center justify-between px-4 py-4 text-left"
                     >
-                      <span className="text-gray-700 text-sm">{faq.question}</span>
-                      <div className="w-7 h-7 rounded-full bg-gray-300 flex items-center justify-center shrink-0 ml-4">
-                        {isOpen ? (
-                          <Minus size={14} className="text-gray-500" />
-                        ) : (
-                          <Plus size={14} className="text-gray-500" />
-                        )}
+                      <span className="text-sm text-gray-700 pr-3">
+                        {faq.question}
+                      </span>
+
+                      <div className="w-7 h-7 rounded-full bg-gray-200 flex items-center justify-center shrink-0">
+                        {isOpen ? <Minus size={14} /> : <Plus size={14} />}
                       </div>
                     </button>
+
                     {isOpen && (
-                      <div className="px-5 pb-4 text-gray-500 text-sm leading-relaxed">
+                      <div className="px-4 pb-4 text-sm text-gray-500 leading-relaxed">
                         {faq.answer}
                       </div>
                     )}

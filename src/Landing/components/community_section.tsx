@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 import Wave from "../../assets/images/waves.png";
 import Justrite from "../../assets/images/justrite.png";
 import JUMIA from "../../assets/images/jumai.png";
@@ -7,6 +6,9 @@ import Jijing from "../../assets/images/jiji.png";
 import Paystack from "../../assets/images/paystack.png";
 import Jendol from "../../assets/images/jendol.png";
 import Glovo from "../../assets/images/glovo.png";
+import { IoMdStar } from "react-icons/io";
+
+
 
 const reviews = [
   {
@@ -35,11 +37,10 @@ const reviews = [
   },
 ];
 
-
 const StarRating = ({ count }: { count: number }) => (
   <div className="flex gap-1">
     {Array.from({ length: count }).map((_, i) => (
-      <Star key={i} size={18} className="fill-[#FF5A1F] text-[#FF5A1F]" />
+      <IoMdStar key={i} size={18} className="fill-[#FF5A1F] text-[#FF5A1F]" />
     ))}
   </div>
 );
@@ -47,7 +48,7 @@ const StarRating = ({ count }: { count: number }) => (
 export default function CommunitySection() {
   return (
     <>
-      <section className="bg-[#FFF5F0] py-20 relative overflow-hidden">
+      <section className="bg-[#FFF5F0] lg:py-20 py-10 relative overflow-hidden">
         {/* Decorative circle — top left */}
         <img src={Wave} alt="" className="absolute bottom-90" />
 
@@ -68,7 +69,7 @@ export default function CommunitySection() {
           </motion.div>
 
           {/* Review Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:gap-10 lg:mb-24">
             {reviews.map((r, i) => (
               <motion.div
                 key={i}
@@ -79,7 +80,7 @@ export default function CommunitySection() {
                 className="relative pt-8 mt-6"
               >
                 {/* Card */}
-                <div className="bg-white rounded-2xl shadow-sm overflow-visible relative h-full">
+                <div className="bg-white rounded-2xl shadow-sm overflow-visible relative h-full w-10/12 mx-auto group">
                   {/* Orange pill header — overflows top */}
                   <div className="absolute -top-3 -left-7 right-0 bg-[#FF5A1F] rounded-tl-full rounded-bl-full h-25 w-7" />
                   <div className="absolute top-10.5 -left-7 right-0 bg-[#9B4C2E] rounded-tl-full rounded-bl-full h-16 w-7" />
@@ -112,7 +113,7 @@ export default function CommunitySection() {
         </div>
       </section>
 
-      <section className="py-20 bg-white relative">
+      <section className="lg:py-20  bg-white relative">
         {/* Trusted By */}
         <div className="mx-auto container px-5">
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -123,7 +124,7 @@ export default function CommunitySection() {
               viewport={{ once: true }}
               className="lg:w-1/3"
             >
-              <h3 className="text-3xl font-bold text-gray-900 leading-tight">
+              <h3 className="text-3xl font-bold text-center text-gray-900 leading-tight">
                 Trusted By Leading
                 <br />
                 Organizations

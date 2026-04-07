@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const TrustedCurve = () => {
   return (
-    <div className="mx-auto container -mt-15">
+    <div className="mx-auto container lg:-mt-15 mt-5 hidden lg:block">
       <div className="relative w-full xl:max-w-xl lg:max-w-lg">
         {/* Background shape */}
         <div className="absolute inset-0 bg-white clip-slant z-0" />
@@ -12,7 +12,7 @@ const TrustedCurve = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative z-10 text-2xl sm:text-3xl font-bold text-gray-900 p-6"
+          className="relative z-10 text-2xl  sm:text-3xl font-bold text-gray-900 p-6"
         >
           Trusted by Thousands
         </motion.h2>

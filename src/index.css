@@ -16,7 +16,9 @@ tbody tr:hover {
 
 /* Card containers get subtle hover lift */
 .rounded-xl {
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 /* Smooth sidebar nav transitions */
@@ -52,7 +54,6 @@ main {
   }
 }
 
-
 .clip-slant {
   clip-path: polygon(0 0, 87% 0, 100% 100%, 0% 100%);
   border-top-left-radius: 16px;
@@ -63,4 +64,13 @@ main {
   clip-path: polygon(0% 0, 100% 0, 100% 100%, 8.5% 100%);
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 42px !important;
+}
+
+/* Hide clipPath on smaller screens */
+@media (max-width: 1023px) {
+  .clip-slant,
+  .clip-slant-flipped {
+    clip-path: none !important;
+    border-radius: 0 !important;
+  }
 }

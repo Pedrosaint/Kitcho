@@ -90,19 +90,19 @@ export default function HowItWorks() {
       <img
         src={Wave}
         alt=""
-        className="absolute top-0 right-0 w-96 h-96 object-cover z-0"
+        className="absolute top-0 right-0 lg:w-96 w-40 h-40 lg:h-96 object-cover z-0"
       />
 
       <img
         src={StarWave}
         alt=""
-        className="absolute top-35 right-80 w-96 h-96 object-cover z-0"
+        className="absolute top-35 right-80 lg:w-96 w-30 h-30 lg:h-96 object-cover z-0"
       />
 
       <img
         src={StarWave}
         alt=""
-        className="absolute top-135 left-55 w-96 h-96 object-cover z-0"
+        className="absolute top-135 left-55 lg:w-96 w-30 h-40 lg:h-96 object-cover z-0"
       />
 
       <div className="mx-auto container px-5">

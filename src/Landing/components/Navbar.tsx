@@ -18,7 +18,8 @@ export default function Navbar() {
 
   return (
     <nav className="z-50">
-      <div className="mx-auto container flex items-center justify-between pt-6">
+      {/* ================= DESKTOP NAV ================= */}
+      <div className="hidden lg:flex mx-auto container items-center justify-between pt-6">
         {/* Logo */}
         <div className="relative inline-block w-full max-w-md">
           {/* Background shape */}
@@ -33,50 +34,51 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center justify-end gap-8">
+        {/* Nav links */}
+        <div className="flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               to={link.href}
-              className={`text-sm font-semibold transition-colors ${
+              className={`text-sm font-semibold ${
                 location.pathname === link.href
-                  ? "text-[#0F172A] underline underline-offset-8 decoration-2 decoration-orange-500"
+                  ? "text-[#0F172A] underline underline-offset-8 decoration-orange-500"
                   : "text-gray-700 hover:text-gray-900"
               }`}
             >
               {link.label}
             </Link>
           ))}
-          {/* Login button */}
-          <div className="hidden md:flex items-center">
-            <Link to="/auth" className="flex items-center">
-              {/* Main pill */}
-              <div className="bg-white text-[#FF5A1F] font-medium text-lg px-6 py-2 rounded-[20px]">
-                Login
-              </div>
 
-              {/* Connector */}
-              <img src={Rectangle} alt="" className="w-5" />
+          {/* Login */}
+          <Link to="/auth" className="flex items-center">
+            <div className="bg-white text-[#FF5A1F] font-medium px-6 py-2 rounded-[20px]">
+              Login
+            </div>
 
-              {/* Circle with icon */}
-              <div className="w-8 h-8 flex items-center justify-center bg-white rounded-[20px]">
-                <img src={ArrowImage} className="w-4" />
-              </div>
-            </Link>
-          </div>
+            <img src={Rectangle} className="w-5" />
+
+            <div className="w-8 h-8 flex items-center justify-center bg-white rounded-[20px]">
+              <img src={ArrowImage} className="w-4" />
+            </div>
+          </Link>
         </div>
+      </div>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-gray-700"
-        >
+      {/* ================= MOBILE NAV ================= */}
+      <div className="lg:hidden flex items-center justify-between px-5 py-4 bg-white shadow-sm">
+        {/* Logo */}
+        <Link to="/landing">
+          <img src={KitchoLogo} className="w-28" />
+        </Link>
+
+        {/* Hamburger */}
+        <button onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* ================= MOBILE MENU ================= */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
