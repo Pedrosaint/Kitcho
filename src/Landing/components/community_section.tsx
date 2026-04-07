@@ -113,7 +113,7 @@ export default function CommunitySection() {
         </div>
       </section>
 
-      <section className="lg:py-20  bg-white relative">
+      <section className="lg:py-20 py-10  bg-white relative">
         {/* Trusted By */}
         <div className="mx-auto container px-5">
           <div className="flex flex-col lg:flex-row items-center gap-12">
