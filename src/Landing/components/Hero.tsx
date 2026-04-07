@@ -27,7 +27,7 @@ export default function Hero() {
 
               {/* App store buttons */}
               <div className="mt-6 flex flex-wrap gap-3">
-                <button className="inline-flex items-center gap-3 rounded-[30px] shadow-lg border bg-[#FA4A0C] pl-4 pr-7 py-3 text-white hover:bg-[#e5430b] transition-colors">
+                <button className="inline-flex items-center gap-3 rounded-[30px] shadow-lg border bg-[#FF5A1F] pl-4 pr-7 py-3 text-white hover:bg-[#e5430b] transition-colors">
                   <img src={GooglePlayIcon} alt="" className="w-8 h-8 invert" />
                   <div className="text-left">
                     <p className="text-[10px] font-semibold uppercase tracking-widest leading-none">

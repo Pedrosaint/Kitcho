@@ -50,9 +50,9 @@ export default function Navbar() {
           ))}
           {/* Login button */}
           <div className="hidden md:flex items-center">
-            <Link to="/" className="flex items-center">
+            <Link to="/auth" className="flex items-center">
               {/* Main pill */}
-              <div className="bg-white text-[#FA4A0C] font-medium text-lg px-6 py-2 rounded-[20px]">
+              <div className="bg-white text-[#FF5A1F] font-medium text-lg px-6 py-2 rounded-[20px]">
                 Login
               </div>
 

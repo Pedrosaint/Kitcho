@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   Search,
   ShoppingCart,
@@ -106,19 +107,28 @@ export default function HowItWorks() {
 
       <div className="mx-auto container px-5">
         {/* How it works */}
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl font-bold text-gray-900">
             How the app works
           </h2>
           <p className="text-gray-500 mt-2 text-sm">
             Getting your favorite food delivered is as easy as 1-2-3
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20">
           {steps.map((step, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
               className="relative bg-white rounded-2xl p-6 shadow-sm text-center z-10"
             >
               {/* Step number badge */}
@@ -130,51 +140,75 @@ export default function HowItWorks() {
               </div>
               <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
               <p className="text-gray-500 text-sm">{step.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* For Customers */}
-        <div className="text-center mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-8"
+        >
           <h2 className="text-3xl font-bold text-gray-900">
             For <span className="text-[#FF5A1F]">Customers</span>
           </h2>
           <p className="text-gray-500 mt-2 text-sm">
             Everything you need for a seamless food ordering experience
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {customerFeatures.map((feature, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 shadow-sm z-10">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white rounded-2xl p-6 shadow-sm z-10"
+            >
               <div className="w-10 h-10 rounded-xl bg-[#FF5A1F] text-white flex items-center justify-center mb-4">
                 {feature.icon}
               </div>
               <h3 className="font-bold text-gray-900 mb-2">{feature.title}</h3>
               <p className="text-gray-500 text-sm">{feature.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* For Chefs */}
-        <div className="text-center mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-8"
+        >
           <h2 className="text-3xl font-bold text-gray-900">
             For <span className="text-[#FF5A1F]">Chefs</span>
           </h2>
           <p className="text-gray-500 mt-2 text-sm">
             Grow your culinary business with powerful tools and support
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {chefFeatures.map((feature, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 shadow-sm z-10">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white rounded-2xl p-6 shadow-sm z-10"
+            >
               <div className="w-10 h-10 rounded-xl bg-[#FF5A1F] text-white flex items-center justify-center mb-4">
                 {feature.icon}
               </div>
               <h3 className="font-bold text-gray-900 mb-2">{feature.title}</h3>
               <p className="text-gray-500 text-sm">{feature.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

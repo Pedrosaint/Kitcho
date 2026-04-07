@@ -15,14 +15,33 @@ import SettingsPage from "../portal/modules/settings/pages/settings.page";
 import LandingPage from "../Landing/pages/landing.page";
 import GeneralLayout from "../shared/layouts/GeneralLayout";
 import FaqPage from "../Landing/pages/faq.page";
+import ContactPage from "../Landing/pages/contact.page";
+import LoginPage from "../auth/components/login.page";
+import SignupPage from "../auth/components/signup.page";
+import ForgotPasswordPage from "../auth/components/forgot-password.page";
+import AuthLayout from "../auth/pages/AuthLayout";
 
 export const router = createBrowserRouter([
+  // Landing routes
   {
     path: "/",
     element: <LandingLayout />,
     children: [{ index: true, element: <LandingPage /> }],
   },
   { path: "/faqs", element: <GeneralLayout />, children: [{ index: true, element: <FaqPage /> }] },
+  { path: "/contact", element: <GeneralLayout />, children: [{ index: true, element: <ContactPage /> }] },
+
+  // Auth routes
+  { path: "/auth",
+    element: <AuthLayout />, 
+    children: [
+      { index: true, element: <LoginPage /> },
+      { path: "signup", element: <SignupPage /> },
+      { path: "forgot-password", element: <ForgotPasswordPage /> },
+    ]
+  },
+
+  // Admin routes
   {
     path: "/admin",
     element: <AdminLayout />,

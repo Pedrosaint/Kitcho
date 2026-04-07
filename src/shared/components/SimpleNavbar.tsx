@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ArrowImage from "../../assets/images/Vector (6).png";
-import Rectangle from "../../assets/images/Rectangle 1686.png";
+import Rectangle from "../../assets/images/Rectangle 1686 (1).png";
 import KitchoLogo from "../../assets/images/logo.png";
 
 const navLinks = [
@@ -41,17 +41,17 @@ export default function SimpleNavbar() {
           ))}
           {/* Login button */}
           <div className="hidden md:flex items-center">
-            <Link to="/" className="flex items-center">
+            <Link to="/auth" className="flex items-center -space-x-3 z-10">
               {/* Main pill */}
-              <div className="bg-white text-[#FA4A0C] font-medium text-lg px-6 py-2 rounded-[20px] border border-orange-500">
+              <div className="bg-white border border-gray-200 text-[#FF5A1F] font-medium text-lg px-6 py-2 rounded-[20px] z-10">
                 Login
               </div>
 
               {/* Connector */}
-              <img src={Rectangle} alt="" className="w-5" />
+              <img src={Rectangle} alt="" className="w-10" />
 
               {/* Circle with icon */}
-              <div className="w-8 h-8 flex items-center justify-center bg-white rounded-[20px]">
+              <div className="w-8 h-8 flex items-center justify-center bg-white border border-gray-200 rounded-[20px] z-10">
                 <img src={ArrowImage} className="w-4" />
               </div>
             </Link>
