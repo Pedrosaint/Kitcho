@@ -93,7 +93,7 @@ export default function SimpleNavbar() {
                 </Link>
               ))}
               <Link
-                to="/"
+                to="/auth"
                 className="inline-flex items-center gap-1 text-sm font-semibold text-orange-500"
               >
                 Login <ArrowUpRight size={16} />

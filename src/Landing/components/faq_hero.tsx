@@ -36,21 +36,23 @@ export default function FAQHero() {
       </div>
 
       {/* ================= MOBILE VERSION ================= */}
-      <div className="lg:hidden px-5 py-14 text-center">
-        <h2 className="text-2xl font-semibold text-gray-900">
-          Frequently Asked Questions
-        </h2>
+      <div className="lg:hidden py-10 text-center">
+        <div className="px-5">
+          <h2 className="text-2xl font-semibold text-gray-900">
+            Frequently Asked Questions
+          </h2>
 
-        <p className="mt-3 text-gray-500 text-sm">
-          Find quick answers about ordering, delivery, and using Kitcho.
-        </p>
+          <p className="mt-3 text-gray-500 text-sm">
+            Find quick answers about ordering, delivery, and using Kitcho.
+          </p>
+        </div>
 
         {/* Illustration */}
         <div className="relative mt-8">
           <img
             src={Illustration}
             alt=""
-            className="mx-auto w-[85%] object-contain"
+            className=" w-full h-full object-contain relative"
           />
 
           <img src={Shadow} alt="" className="absolute -bottom-6 w-full" />
