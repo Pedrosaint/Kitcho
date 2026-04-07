@@ -30,13 +30,13 @@ export default function TrustedBy({ stats }: Props) {
             >
               Trusted by Thousands
             </motion.h2>
-            <p className="text-lg text-gray-500">
+            <p className="md:text-lg text-gray-500">
               Join our growing community of happy customers
             </p>
 
             {/* Avatar stack */}
-            <div className="mt-4 flex items-center gap-2 bg-[#FEE0D6] rounded-full px-3 py-1 w-max">
-              <div className="flex -space-x-2">
+            <div className="mt-4 flex items-center gap-2 bg-[#FEE0D6] rounded-full px-3 py-1.5 w-max">
+              <div className="flex -space-x-3">
                 {[
                   "bg-orange-400",
                   "bg-blue-400",

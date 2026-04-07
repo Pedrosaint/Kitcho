@@ -61,7 +61,7 @@ main {
 }
 
 .clip-slant-flipped {
-  clip-path: polygon(0% 0, 100% 0, 100% 100%, 8.5% 100%);
+  clip-path: polygon(0% 0, 100% 0, 100% 100%, 6.9% 100%);
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 42px !important;
 }

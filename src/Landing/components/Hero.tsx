@@ -77,7 +77,7 @@ export default function Hero() {
       </div>
 
       {/* ================= MOBILE VERSION ================= */}
-      <div className="lg:hidden px-5 py-12 text-center">
+      <div className="lg:hidden px-5 py-12 text-center bg-white">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -98,6 +98,7 @@ export default function Hero() {
           className="mx-auto mt-6 w-[85%] object-contain"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
+          style={{ filter: "drop-shadow(0px 20px 40px #FF5A1F99)" }}
         />
 
         {/* Buttons */}
