@@ -51,7 +51,7 @@ export default function Navbar() {
           ))}
 
           {/* Login */}
-          <Link to="/auth" className="flex items-center">
+          <Link to="/auth" className="flex items-center -space-x-1">
             <div className="bg-white text-[#FF5A1F] font-medium px-6 py-2 rounded-[20px]">
               Login
             </div>

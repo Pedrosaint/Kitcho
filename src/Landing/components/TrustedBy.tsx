@@ -26,7 +26,7 @@ export default function TrustedBy({ stats }: Props) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-2xl font-bold text-gray-900"
+              className="text-2xl font-bold text-gray-900 md:hidden"
             >
               Trusted by Thousands
             </motion.h2>

@@ -69,7 +69,7 @@ export default function CommunitySection() {
           </motion.div>
 
           {/* Review Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:gap-10 lg:mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 lg:gap-10 lg:mb-24">
             {reviews.map((r, i) => (
               <motion.div
                 key={i}
@@ -77,34 +77,41 @@ export default function CommunitySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className="relative pt-8 mt-6"
+                className="relative pt-8 mt-6 group"
               >
-                {/* Card */}
-                <div className="bg-white rounded-2xl shadow-sm overflow-visible relative h-full w-10/12 mx-auto group">
-                  {/* Orange pill header — overflows top */}
-                  <div className="absolute -top-3 -left-7 right-0 bg-[#FF5A1F] rounded-tl-full rounded-bl-full h-25 w-7" />
-                  <div className="absolute top-10.5 -left-7 right-0 bg-[#9B4C2E] rounded-tl-full rounded-bl-full h-16 w-7" />
-                  <div className="absolute -top-6 left-0 right-0 flex items-center justify-between px-4">
-                    <div className="bg-[#FF5A1F] rounded-full px-5 py-3 flex-1 mr-8 -ml-10.5">
-                      <p className="text-white font-bold text-sm">{r.name}</p>
-                      <p className="text-white/80 text-xs">{r.role}</p>
-                    </div>
-                    {/* Avatar in peach circle */}
-                    <div className="w-18 h-18 rounded-full bg-[#FFF5F0] flex items-center justify-center shrink-0">
-                      <img
-                        src={r.avatar}
-                        alt={r.name}
-                        className="w-14 h-14 rounded-full object-cover"
-                      />
+                <div className="relative">
+                  <div className="absolute top-0 left-7.5 lg:left-9.5 xl:left-8 2xl:left-9.5 right-0 z-10">
+                    {/* header and the circles */}
+                    <div className="relative transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-10">
+                      <div className="absolute -top-5 -left-7 right-0 bg-[#FF5A1F] rounded-tl-full rounded-bl-full h-29 w-7" />
+                      <div className="absolute top-9 -left-7 right-0 bg-[#9B4C2E] rounded-tl-full rounded-bl-full h-17 w-7" />
+
+                      <div className="bg-[#FF5A1F] rounded-full px-5 py-3 flex-1 mr-35 lg:mr-40 -ml-7 absolute -top-6 left-0 right-0">
+                        <p className="text-white font-bold text-sm">{r.name}</p>
+                        <p className="text-white/80 text-xs">{r.role}</p>
+                      </div>
                     </div>
                   </div>
+                  {/* Card */}
+                  <div className="bg-white rounded-2xl shadow-sm overflow-visible relative h-full w-10/12 mx-auto">
+                    <div className="absolute -top-6 left-0 right-0 flex items-center justify-end px-4">
+                      {/* Avatar in peach circle */}
+                      <div className="w-18 h-18 rounded-full bg-[#FFF5F0] flex items-center justify-center shrink-0">
+                        <img
+                          src={r.avatar}
+                          alt={r.name}
+                          className="w-14 h-14 rounded-full object-cover"
+                        />
+                      </div>
+                    </div>
 
-                  {/* Card body */}
-                  <div className="pt-12 pb-6 px-6">
-                    <StarRating count={r.rating} />
-                    <p className="text-gray-500 text-sm mt-3 leading-relaxed">
-                      "{r.review}"
-                    </p>
+                    {/* Card body */}
+                    <div className="pt-12 pb-6 px-6">
+                      <StarRating count={r.rating} />
+                      <p className="text-gray-500 text-sm mt-3 leading-relaxed">
+                        "{r.review}"
+                      </p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
